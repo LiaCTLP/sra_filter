@@ -16,6 +16,12 @@ VALID_PRACTICE_AREAS = [
 ]
 
 
+# API Key and Authentication
+Keys_db = {
+    '745cd00c-03ad-4LIA-a2f0-38ef6ca314ca': 'user1',
+    'c5e5b22d-4773-4LIA-83ce-0011943f58b0': 'user2'
+}
+
 def fetch_sra_companies():
 
     headers = {"Ocp-Apim-Subscription-Key": API_KEY}
@@ -30,6 +36,15 @@ def fetch_sra_companies():
     else:
         return []
 
+def authenticate_api_key(api_key):
+    return Keys_db.get(api_key)
+
+
+@app.before_request
+def before_request():
+    api_key = request.headers.get('API-Key')
+    if not api_key or not authenticate_api_key(api_key):
+        return jsonify({'error': 'Unauthorized'}), 401
 
 @app.route('/filtered_companies', methods=['GET'])
 def get_filtered_companies():
