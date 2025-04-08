@@ -68,4 +68,4 @@ jobs:
         with:
           app-name: 'SRAfilter'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E37AFC0F59624598BD8697F264D8312B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E65E4BED43384B858B2602C005FBCB19 }}
