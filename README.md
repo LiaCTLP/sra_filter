@@ -5,7 +5,7 @@ For marketing search
 Search companies with additional filters for location and practice area
 
 examle: 
-http://127.0.0.1:5000/filtered_companies?practice_name=Riverine Solicitors&location=london&practice_area=family
+http://127.0.0.1:5000/filtered_companies?practice_name=RiverineSolicitors&location=london&practice_area=family
 
 
 {
