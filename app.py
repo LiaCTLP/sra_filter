@@ -69,6 +69,7 @@ def get_filtered_companies():
         work_area_matches = False
         practice_name_matches = False
 
+        # Log the company being processed
         print(f"Processing Company: {company}")
 
 
